@@ -14,7 +14,7 @@ class CreateCustomers extends Migration {
 	{
 		Schema::create('customers', function($table)
         {
-            $table->increments('cust_id');
+            $table->increments('id');
             $table->boolean('active');
             $table->boolean('tenant');
             $table->boolean('owner');

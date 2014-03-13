@@ -30,8 +30,8 @@
                     <td>{{ $customer->address1 }}</td>
                     <td>{{ $customer->active ? 'Yes' : 'No' }}</td>
                     <td>
-                        <a href="{{ action('CustomersController@edit', $customer->cust_id) }}" class="btn btn-default">Edit</a>
-                        <a href="{{ action('CustomersController@delete', $customer->cust_id) }}" class="btn btn-danger">Delete</a>
+                        <a href="{{ action('CustomersController@edit', $customer->id) }}" class="btn btn-default">Edit</a>
+                        <a href="{{ action('CustomersController@delete', $customer->id) }}" class="btn btn-danger">Delete</a>
                     </td>
                 </tr>
                 @endforeach

@@ -46,7 +46,7 @@ class CustomersController extends BaseController{
 	public function handleEdit()
     {
         // Handle edit form submission.
-        $customer = Customer::findOrFail(Input::get('cust_id'));
+        $customer = Customer::findOrFail(Input::get('id'));
 		$customer->name = Input::get('name');
 		$customer->attention = Input::get('attention');
 		$customer->care_of = Input::get('care_of');
@@ -77,8 +77,8 @@ class CustomersController extends BaseController{
     public function handleDelete()
     {
         // Handle the delete confirmation.
-        $cust_id = Input::get('customer');
-        $customer = Customer::findOrFail($cust_id);
+        $id = Input::get('customer');
+        $customer = Customer::findOrFail($id);
         $customer->delete();
 
         return Redirect::action('CustomersController@index');
