@@ -38,7 +38,7 @@ class CustomersController extends BaseController{
 
 		return Redirect::action('CustomersController@index');
 	}
-	public function edit(Customer $Customer)
+	public function edit(customer $customer)
 	{
 		//Show edit customer form
 		return View::make('edit', compact('customer'));
@@ -69,10 +69,10 @@ class CustomersController extends BaseController{
 
 		return Redirect::action('CustomersController@index');
     }
-    public function delete()
+    public function delete(customer $customer)
     {
         // Show delete confirmation page.
-        return View::make('delete');
+        return View::make('delete', compact('customer'));
     }
     public function handleDelete()
     {
