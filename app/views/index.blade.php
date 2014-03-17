@@ -38,4 +38,5 @@
             </tbody>
         </table>
     @endif
+    {{$customers->links()}}
 @stop
