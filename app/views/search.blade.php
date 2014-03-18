@@ -12,7 +12,7 @@
     </div>
 --}}
     @if ($customers->isEmpty())
-        <p>There are no Customers! :(</p>
+        <p>We can't find any Customers like that! :(</p>
     @else
         <table class="table table-striped">
             <thead>
@@ -28,7 +28,7 @@
                 <tr>
                     <td>{{ $customer->name }}</td>
                     <td>{{ $customer->address1 }}</td>
-                    <td>{{ $customer->active ? 'Yes' : 'No' }}</td>
+                    <td>{{ Form::checkbox('active', 'active', $customer->active ? true : false, array('disabled'))}}</td>
                     <td>
                         <a href="{{ action('CustomersController@edit', $customer->id) }}" class="btn btn-default">Edit</a>
                         <a href="{{ action('CustomersController@delete', $customer->id) }}" class="btn btn-danger">Delete</a>
@@ -38,5 +38,5 @@
             </tbody>
         </table>
     @endif
-    {{$customers->links()}}
+    {{$customers->appends(array('q' => $search))->links()}}
 @stop
