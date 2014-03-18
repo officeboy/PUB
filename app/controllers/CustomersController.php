@@ -7,6 +7,12 @@ class CustomersController extends BaseController{
 		$customers = Customer::paginate(5);
 		return View::make('index', compact('customers'));
 	}
+	public function Search(searchTerm $searchTerm)
+	{
+		$custTerm = Input::get('searchTerm');
+		$customers = Customer::where('name', 'LIKE', '%'. $custTerm .'%')->paginate(5);
+		return View::make('search',compact('customers'));
+	}
 	public function create()
 	{
 		//show create customer form
