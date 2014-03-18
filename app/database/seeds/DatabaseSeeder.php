@@ -10,8 +10,10 @@ class DatabaseSeeder extends Seeder {
 	public function run()
 	{
 		Eloquent::unguard();
+		
+		$tables = ['customers',];
 
-		 $this->call('CustomersTableSeeder');
+		 $this->call('CustomersFakerSeeder');
 		 $this->command->info('Customers table seeded!');
 	}
 
