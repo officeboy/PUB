@@ -14,25 +14,25 @@ class CreateCustomers extends Migration {
 	{
 		Schema::create('customers', function($table)
         {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->boolean('active');
             $table->boolean('tenant');
             $table->boolean('owner');
             $table->string('name', 48);
-            $table->string('attention', 48);
-            $table->string('care_of', 48);
+            $table->string('attention', 48)->nullable();
+            $table->string('care_of', 48)->nullable();
             $table->string('address1', 48);
-            $table->string('address2', 48);
-            $table->string('city', 48);
-            $table->string('state', 2);
-            $table->string('zip', 10);
-            $table->string('country', 24);
-            $table->string('home_phone', 36);
-            $table->string('work_phone', 36);
-            $table->string('cell_phone', 36);
-            $table->string('other_phone', 36);
-            $table->string('email', 100);
-            $table->string('email_display_name', 36);
+            $table->string('address2', 48)->nullable();
+            $table->string('city', 48)->nullable();
+            $table->string('state', 2)->nullable();
+            $table->string('zip', 10)->nullable();
+            $table->string('country', 24)->nullable();
+            $table->string('home_phone', 36)->nullable();
+            $table->string('work_phone', 36)->nullable();
+            $table->string('cell_phone', 36)->nullable();
+            $table->string('other_phone', 36)->nullable();
+            $table->string('email', 100)->nullable();
+            $table->string('email_display_name', 36)->nullable();
             $table->timestamps();
         });
 	}

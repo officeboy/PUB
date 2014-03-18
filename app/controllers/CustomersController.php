@@ -4,7 +4,7 @@ class CustomersController extends BaseController{
 	public function index()
 	{
 		//show listing of customers
-		$customers = Customer::paginate(4);
+		$customers = Customer::paginate(5);
 		return View::make('index', compact('customers'));
 	}
 	public function create()
