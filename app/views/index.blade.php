@@ -25,7 +25,7 @@
             </thead>
             <tbody>
  @foreach($customers as $customer)
-                <tr data-toggle="collapse" data-parent="accordion" data-target="#cust{{ $customer->id }}" class="accordion-toggle">  
+                <tr data-toggle="collapse" data-target=".cust{{ $customer->id }}" class="accordian-toggle {{$customer->active ? 'active' : 'danger'}}">  
                     <td>{{ $customer->name }}</td>
                     <td>{{ $customer->address1 }}</td>
                     <td>{{ Form::checkbox('active', 'active', $customer->active ? true : false, array('disabled'))}}</td>
@@ -35,11 +35,32 @@
                     </td>
                 </tr>
                 <tr>
-                    <td colspan="4" class="hiddenRow">
-                        <div class="collapse" id="cust{{$customer->id}}">
-                    {{$customer}} 
-                          </div>
+                    <td class="hiddenRow">
+                        <div class="accordian-body collapse cust{{$customer->id}}" >
+                            <address>
+                    {{$customer->attention}}<br>
+                    {{$customer->name}}<br>
+                    {{$customer->care_of}}<br>
+                    {{$customer->address1}}<br>
+                    {{$customer->address2}}<br>
+                    {{$customer->city}} {{$customer->state}} {{$customer->zip}}<br>
+                    {{$customer->country}}
+                            </address>
+                      </div>
                     </td>
+                    <td class="hiddenRow">
+                      <div class="accordian-body collapse cust{{$customer->id}}" >
+                            <address>
+                    <abbr title="Home Phone">H:</abbr> {{$customer->home_phone}}<br>
+                    <abbr title="Work Phone">W:</abbr> {{$customer->work_phone}}<br>
+                    <abbr title="Cell Phone">C:</abbr> {{$customer->cell_phone}}<br>
+                    <abbr title="Other Phone">O:</abbr> {{$customer->other_phone}}<br>
+                    <a href="mailto:{{$customer->email}}">{{$customer->email}}</a>
+                            </address>
+                      </div>
+                    </td>
+                    <td class="hiddenRow"></td>
+                    <td class="hiddenRow"></td>
                 </tr>
 @endforeach    
             </tbody>
