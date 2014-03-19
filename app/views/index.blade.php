@@ -14,7 +14,7 @@
 @if ($customers->isEmpty())
         <p>There are no Customers! :(</p>
 @else
-        <table class="table table-striped" id="accordion" style="border-collapse:collapse;">
+        <table class="table table-condensed table-striped" id="accordion" style="border-collapse:collapse;">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -37,7 +37,7 @@
                 <tr>
                     <td colspan="4" class="hiddenRow">
                         <div class="collapse" id="cust{{$customer->id}}">
-        Anim pariatur cliche 
+                    {{$customer}} 
                           </div>
                     </td>
                 </tr>

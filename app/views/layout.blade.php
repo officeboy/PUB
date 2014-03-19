@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Customers</title>
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" />
 </head>
 <body>
@@ -22,5 +23,9 @@
         </nav>
         @yield('content')
     </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
