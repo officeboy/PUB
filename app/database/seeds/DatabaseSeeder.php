@@ -11,10 +11,12 @@ class DatabaseSeeder extends Seeder {
 	{
 		Eloquent::unguard();
 		
-		$tables = ['customers',];
+		$tables = ['customers', 'accounts'];
 
 		 $this->call('CustomersFakerSeeder');
 		 $this->command->info('Customers table seeded!');
+		 $this->call('AccountsTableSeeder');
+		 $this->command->info('Accounts table seeded!');
 	}
 
 }

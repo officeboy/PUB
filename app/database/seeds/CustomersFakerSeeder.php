@@ -1,10 +1,13 @@
 <?php
 
+// Composer: "fzaninotto/faker": "v1.3.0"
+use Faker\Factory as Faker;
+
 class CustomersFakerSeeder extends Seeder {
 
 	public function run() {
 
-	$faker = Faker\Factory::create();
+	$faker = Faker::create();
 
 for ($i = 0; $i < 100 ; $i++) {
 

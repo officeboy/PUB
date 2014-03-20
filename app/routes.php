@@ -13,6 +13,7 @@
 
 // Bind route Peramiters
 Route::model('customer', 'Customer');
+Route::resource('accounts', 'AccountsController');
 
 // Show pages.
 Route::get('/', 'CustomersController@index');
