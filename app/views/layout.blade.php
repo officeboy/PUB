@@ -11,8 +11,21 @@
         <nav class="navbar navbar-default" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <a href="{{ action('CustomersController@index') }}" class="navbar-brand">Customers</a>
-                    <form action="{{ action('CustomersController@Search') }}" method="get" class="navbar-form navbar-left" role="search"> 
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#PUB-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="{{ action('CustomersController@index') }}" class="navbar-brand">PUB</a>
+                </div>
+                <div class="collapse navbar-collapse" id="PUB-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li><a href="{{ action('CustomersController@index') }}">Customers</a></li>
+                        <li><a href="{{ action('AccountsController@index') }}">Accounts</a></li>
+                        <li class="disabled"><a href="#">Link</a></li>
+                    </ul>
+                    <form action="{{ action('CustomersController@Search') }}" method="get" class="navbar-form navbar-right" role="search"> 
                         <div class="form-group">
                             <input type="text" class="form-control" name="q" placeholder="Search">
                         </div>
